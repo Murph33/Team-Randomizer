@@ -3,9 +3,9 @@
   <label for="names">Names</label><br>
   <textarea autofocus="true" cols="100" rows="2"
   placeholder="please enter a list of people separated by commas only  e.g. mike,steve,frank"
-   id="names" name="names"><%= params[:names] %></textarea><br>
+   id="names" name="names"><%= session["names"].join(",") %></textarea><br>
   <label for="number">Number of teams</label><br>
-  <input type="number" name="number" value="<%= @num_teams %>"><br>
+  <input type="number" name="number" value="<%= session['num'] %>"><br>
   <input type="submit" value="Randomize">
 </form>
 
