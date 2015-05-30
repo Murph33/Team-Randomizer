@@ -1,7 +1,13 @@
 <form method="post" action="Randomized">
 
-  <textarea autofocus="true" cols="300" rows="100" placeholder="please enter a list of people separated by commas only
-  e.g. mike,steve,frank" name="names"><%=  %></textarea>
+  <label for="names">Names</label><br>
+  <textarea autofocus="true" cols="100" rows="2"
+  placeholder="please enter a list of people separated by commas only  e.g. mike,steve,frank"
+   id="names" name="names"><%= params[:names] %></textarea><br>
+  <label for="number">Number of teams</label><br>
+  <input type="number" name="number" value="<%= @num_teams %>"><br>
   <input type="submit" value="Randomize">
-
 </form>
+
+
+<%= "ERROR: Must enter no more teams than possible team members" if @names && @names.length < @num_teams %>
