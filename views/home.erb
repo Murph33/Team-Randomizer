@@ -9,5 +9,18 @@
   <input type="submit" value="Randomize">
 </form>
 
-
-<%= "ERROR: Must enter no more teams than possible team members" if @names && @names.length < @num_teams %>
+<% if @error %>
+<div id="error">
+<%= "ERROR: Must enter no more teams than possible team members or more than 0 teams."  %> <br><br>
+<div>
+<% end %>
+<br><br>
+<%# can make viewing of teams conditional on no error being present. %>
+<%# if @error == nil %>
+   <% if session[1] != nil && session['names'].length >= session['num'] %>
+   <%    1.upto(session['num']) do |i| %>
+   <div> Team <%= i %>:
+    <%=   session[i]   %></div><br>
+    <%    end %>
+    <% end %>
+<%# end %>

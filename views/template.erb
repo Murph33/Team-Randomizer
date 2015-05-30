@@ -6,14 +6,27 @@
     <title>Murphy and Thomas Team Randomizer</title>
     <meta name="keywords" charset="utf-8" content="html, tutorial, learning">
     <meta name="description" charset="utf-8" content="This is to randomize a list of people into teams">
-
+    <style>
+    div {
+      font-size: 20px;
+      clear: both;
+      display: block;
+      height: 50px;
+    }
+    #error {
+      text-align: center
+      width: auto;
+      height: 20px;
+      background-color: red;
+      display: block;
+      margin: 55px;
+      padding: 20px;
+    }
+    </style>
   </head>
 
   <body>
-    <%= @names %>
-    <%= @num_teams %>
 
-    <h1><%= @arrays %></h1>
     <%= yield %>
 
   </body>
